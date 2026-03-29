@@ -1,0 +1,11 @@
+{
+  "name": "safepath",
+  "version": "1.0.0",
+  "description": "SafePath - Women's Safety Navigation Platform for India",
+  "scripts": {
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm start",
+    "dev:ml": "cd ml-service && pip install -r requirements.txt && python app.py"
+  }
+}

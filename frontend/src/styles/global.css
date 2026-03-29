@@ -1,0 +1,123 @@
+/* SafePath Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap');
+
+:root {
+  --red:        #E63946;
+  --red-dark:   #c1121f;
+  --red-light:  #ff8fa3;
+  --green:      #2DC653;
+  --green-dark: #1a7a31;
+  --yellow:     #F4A261;
+  --yellow-dark:#e76f51;
+  --navy:       #1D3557;
+  --navy-light: #457B9D;
+  --bg:         #F8F9FA;
+  --white:      #ffffff;
+  --gray-100:   #f1f3f5;
+  --gray-200:   #e9ecef;
+  --gray-400:   #adb5bd;
+  --gray-600:   #6c757d;
+  --gray-800:   #343a40;
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.12);
+  --shadow-md:  0 4px 12px rgba(0,0,0,0.15);
+  --shadow-lg:  0 8px 32px rgba(0,0,0,0.2);
+  --radius-sm:  8px;
+  --radius-md:  12px;
+  --radius-lg:  20px;
+  --radius-xl:  28px;
+  --transition: 0.2s ease;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--gray-800);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Leaflet overrides */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  z-index: 0;
+}
+
+.leaflet-control-zoom {
+  border: none !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+.leaflet-control-zoom a {
+  border-radius: var(--radius-sm) !important;
+  font-size: 18px !important;
+  width: 36px !important;
+  height: 36px !important;
+  line-height: 36px !important;
+  color: var(--navy) !important;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--gray-400); border-radius: 2px; }
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.08); opacity: 0.85; }
+}
+
+@keyframes ping {
+  0%   { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.fade-in   { animation: fadeIn 0.3s ease; }
+.slide-up  { animation: slideUp 0.35s cubic-bezier(0.32, 0.72, 0, 1); }
+
+/* Utility */
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  outline: none;
+}

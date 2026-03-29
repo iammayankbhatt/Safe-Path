@@ -1,0 +1,224 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mapWrapper {
+  flex: 1;
+  min-height: 200px;
+}
+
+.panel {
+  background: #fff;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.1);
+  padding: 16px 16px 24px;
+  max-height: 65vh;
+  overflow-y: auto;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.backBtn {
+  background: #f1f3f5;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #457B9D;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.panelTitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #1D3557;
+}
+
+.inputSection {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.inputGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8f9fa;
+  border: 1.5px solid #e9ecef;
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.inputDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  color: #343a40;
+}
+
+.input::placeholder { color: #adb5bd; }
+
+.inputConnector {
+  color: #dee2e6;
+  padding: 2px 0 2px 21px;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.suggestions {
+  background: #fff;
+  border: 1.5px solid #dee2e6;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 4px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 100;
+}
+
+.suggestionItem {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #f1f3f5;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #343a40;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.suggestionItem:last-child { border-bottom: none; }
+.suggestionItem:active { background: #f0f6ff; }
+
+.error {
+  background: #fff3f3;
+  border: 1px solid #ffd0d0;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 13px;
+  color: #c1121f;
+  margin-bottom: 10px;
+}
+
+.findBtn {
+  width: 100%;
+  background: linear-gradient(135deg, #1D3557, #457B9D);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: opacity 0.15s;
+}
+
+.findBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+.findBtn:not(:disabled):active { opacity: 0.85; }
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: block;
+}
+
+.results {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: fadeIn 0.3s ease;
+}
+
+.routeCard {
+  border: 2px solid #dee2e6;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.routeCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.routeLabel {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1D3557;
+}
+
+.safetyScore {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.routeNote {
+  font-size: 11px;
+  color: #adb5bd;
+}
+
+.routeStats {
+  display: flex;
+  gap: 16px;
+}
+
+.routeStat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.statVal {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1D3557;
+  text-transform: capitalize;
+}
+
+.statLabel {
+  font-size: 11px;
+  color: #6c757d;
+}
+
+.routeNote2 {
+  font-size: 12px;
+  color: #457B9D;
+  background: #f0f6ff;
+  border-radius: 8px;
+  padding: 8px 10px;
+  line-height: 1.4;
+}

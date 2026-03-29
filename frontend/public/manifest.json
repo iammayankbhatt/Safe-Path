@@ -1,0 +1,28 @@
+{
+  "short_name": "SafePath",
+  "name": "SafePath — Women's Safety Navigation",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#1D3557",
+  "background_color": "#1D3557",
+  "description": "Know which streets are safe before you walk them.",
+  "orientation": "portrait",
+  "categories": ["navigation", "safety", "utilities"]
+}

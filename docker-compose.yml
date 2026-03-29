@@ -1,0 +1,83 @@
+version: '3.8'
+
+services:
+  # PostgreSQL + PostGIS
+  db:
+    image: postgis/postgis:14-3.3
+    container_name: safepath-db
+    environment:
+      POSTGRES_DB: safepath
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: safepath123
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./database/setup.sql:/docker-entrypoint-initdb.d/setup.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Node.js Backend
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: safepath-backend
+    ports:
+      - "5000:5000"
+    environment:
+      NODE_ENV: development
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: safepath
+      DB_USER: postgres
+      DB_PASSWORD: safepath123
+      FRONTEND_URL: http://localhost:3000
+      ML_SERVICE_URL: http://ml-service:5001
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+
+  # Python ML Microservice
+  ml-service:
+    build:
+      context: ./ml-service
+      dockerfile: Dockerfile
+    container_name: safepath-ml
+    ports:
+      - "5001:5001"
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: safepath
+      DB_USER: postgres
+      DB_PASSWORD: safepath123
+      ML_PORT: 5001
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # React Frontend (dev server)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: safepath-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      REACT_APP_API_URL: http://localhost:5000
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+
+volumes:
+  pgdata:

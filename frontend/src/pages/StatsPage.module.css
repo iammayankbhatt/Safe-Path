@@ -1,0 +1,214 @@
+.page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #f8f9fa;
+}
+
+.header {
+  background: #1D3557;
+  padding: 48px 20px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.backBtn {
+  background: rgba(255,255,255,0.15);
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+}
+
+.title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #6c757d;
+  font-size: 15px;
+}
+
+.section {
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1D3557;
+  margin-bottom: 14px;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.statCard {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 12px 8px;
+  text-align: center;
+}
+
+.statNumber {
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1D3557;
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 11px;
+  color: #6c757d;
+  margin-top: 4px;
+}
+
+/* By type */
+.byType {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.typeRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.typeName {
+  width: 90px;
+  font-size: 12px;
+  color: #495057;
+  text-transform: capitalize;
+  flex-shrink: 0;
+}
+
+.typeBar {
+  flex: 1;
+  height: 6px;
+  background: #e9ecef;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.typeBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, #E63946, #F4A261);
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.typeCount {
+  font-size: 12px;
+  font-weight: 600;
+  color: #343a40;
+  width: 28px;
+  text-align: right;
+}
+
+/* Zones */
+.zoneCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.zoneCard {
+  border: 2px solid;
+  border-radius: 12px;
+  padding: 12px 8px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.zoneNum {
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1D3557;
+}
+
+.zoneLabel {
+  font-size: 12px;
+  color: #6c757d;
+}
+
+.avgScore {
+  font-size: 14px;
+  color: #495057;
+  text-align: center;
+  padding: 8px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+/* Roadmap */
+.roadmap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.roadmapItem {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.roadmapDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.roadmapPhase {
+  font-size: 13px;
+  font-weight: 700;
+  color: #343a40;
+}
+
+.roadmapDesc {
+  font-size: 12px;
+  color: #6c757d;
+  margin-top: 2px;
+}
+
+.footer {
+  font-size: 11px;
+  color: #adb5bd;
+  text-align: center;
+  padding-bottom: 8px;
+}
